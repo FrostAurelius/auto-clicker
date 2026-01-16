@@ -1,0 +1,16 @@
+{
+  "name": "auto-clicker",
+  "version": "1.0.0",
+  "description": "A simple auto clicker for Windows built with Node.js",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": ["auto-clicker", "automation", "mouse"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@nut-tree-fork/nut-js": "^4.2.6",
+    "node-global-key-listener": "^0.1.0"
+  }
+}
