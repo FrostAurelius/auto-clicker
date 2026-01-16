@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto Clicker v1.0 - by Noah McLain</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Auto Clicker v1.0 - by Noah McLain</h1>
+        </header>
+
+        <div class="section">
+            <h2>Click Speed</h2>
+            <div class="control-group">
+                <label for="clickInterval">Interval (milliseconds):</label>
+                <div class="slider-container">
+                    <input type="range" id="clickInterval" min="10" max="1000" value="100" step="10">
+                    <span id="intervalValue">100 ms</span>
+                </div>
+                <div class="info">
+                    <span id="clicksPerSecond">10 clicks/second</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Key Bindings</h2>
+            <div class="key-bindings">
+                <div class="key-binding">
+                    <label for="keyStart">Start:</label>
+                    <input type="text" id="keyStart" maxlength="1" placeholder="1" class="key-input">
+                </div>
+                <div class="key-binding">
+                    <label for="keyStop">Stop:</label>
+                    <input type="text" id="keyStop" maxlength="1" placeholder="2" class="key-input">
+                </div>
+                <div class="key-binding">
+                    <label for="keyExit">Exit:</label>
+                    <input type="text" id="keyExit" maxlength="1" placeholder="3" class="key-input">
+                </div>
+                <div class="key-binding">
+                    <label for="keyUpdate">Update Position:</label>
+                    <input type="text" id="keyUpdate" maxlength="1" placeholder="4" class="key-input">
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="button-group">
+                <button id="saveBtn" class="btn btn-primary">Save Settings</button>
+                <button id="startBtn" class="btn btn-success">Start Clicker</button>
+                <button id="stopBtn" class="btn btn-danger">Stop Clicker</button>
+            </div>
+            <div id="status" class="status"></div>
+        </div>
+
+        <div class="section">
+            <div class="emergency-info">
+                <strong>🚨 Emergency Stop:</strong> Press <kbd>ESC</kbd> key to force quit the application immediately
+            </div>
+        </div>
+    </div>
+
+    <script src="renderer.js"></script>
+</body>
+</html>

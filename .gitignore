@@ -6,3 +6,7 @@ node_modules/
 .env
 *.exe
 *.msi
+dist/
+build/
+*.asar
+!.gitkeep

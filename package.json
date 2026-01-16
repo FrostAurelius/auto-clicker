@@ -2,15 +2,57 @@
   "name": "auto-clicker",
   "version": "1.0.0",
   "description": "A simple auto clicker for Windows built with Node.js",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "electron .",
+    "dev": "electron .",
+    "build": "electron-builder",
+    "build:win": "electron-builder --win",
+    "dist": "electron-builder --publish=never",
+    "make-icon": "node create-icon.js"
   },
-  "keywords": ["auto-clicker", "automation", "mouse"],
+  "keywords": [
+    "auto-clicker",
+    "automation",
+    "mouse"
+  ],
   "author": "",
   "license": "MIT",
   "dependencies": {
     "@nut-tree-fork/nut-js": "^4.2.6",
     "node-global-key-listener": "^0.1.0"
+  },
+  "devDependencies": {
+    "electron": "^28.0.0",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "com.autoclicker.app",
+    "productName": "Auto Clicker",
+    "win": {
+      "target": [
+        {
+          "target": "portable",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "mouse.ico"
+    },
+    "files": [
+      "main.js",
+      "clicker.js",
+      "ui/**/*",
+      "package.json",
+      "node_modules/**/*"
+    ],
+    "directories": {
+      "output": "dist",
+      "buildResources": "build"
+    },
+    "portable": {
+      "artifactName": "${productName}-${version}-portable.exe"
+    }
   }
 }
