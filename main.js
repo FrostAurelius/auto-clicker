@@ -77,11 +77,9 @@ async function startClicking() {
     return;
   }
   
-  // Get current mouse position if we don't have one
-  if (!clickPosition) {
-    clickPosition = await mouse.getPosition();
-    console.log(`📍 Position set to: (${clickPosition.x}, ${clickPosition.y})`);
-  }
+  // Get current mouse position when clicking starts
+  clickPosition = await mouse.getPosition();
+  console.log(`📍 Clicking at current position: (${clickPosition.x}, ${clickPosition.y})`);
   
   clickerActive = true;
   console.log(`▶️  Auto clicking STARTED`);
@@ -96,7 +94,7 @@ async function startClicking() {
   const interval = currentConfig.clickInterval || 100;
   clickInterval = setInterval(async () => {
     try {
-      // Move to the saved position and click
+      // Click at the saved position (where mouse was when clicking started)
       await mouse.setPosition(clickPosition);
       await mouse.click(Button.LEFT);
     } catch (error) {
